@@ -1,0 +1,22 @@
+<div class='container my-5'>
+<% if notice %>
+   <p id="notice" class='alert alert-success'><%= notice %></p> 
+<% end %>
+
+<p>
+  <h5>
+  <strong>Title:</strong>
+  <%= @task.title %>
+  </h5>
+</p>
+
+<p>
+  <h5>
+  <strong>Body:</strong>
+  <%= @task.body %>
+  </h5>
+</p>
+
+</div>
+<%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-outline-default' %> |
+<%= link_to 'Back', tasks_path, class: 'btn btn-outline-default' %>

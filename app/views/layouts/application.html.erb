@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskApp</title>
+  <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' %>
+  <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class='pt-5'>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">Freon Tasks</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link ml-4" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+        
+        <ul class='nav navbar-nav navbar-right'>
+          <% if user_signed_in? %>
+            <li>
+              <div class="nav-link mr-5">Welcome <%= current_user.email %> </div>
+            </li>
+            <li>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary') %>        
+            </li>
+          <% else %>
+            <li>
+              <span class="glyphicon glyphicon-log-in"></span>
+            <%= link_to('Login', new_user_session_path, class: 'btn btn-primary mx-2')  %>  
+            </li>
+            <li>
+              <%= link_to('Register', new_user_registration_path, class: 'btn btn-primary mx-2')  %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+
+<main role="main">
+<div class="container mt-5">
+  <% if alert %>
+    <p class="alert alert-danger mt-3"><%= alert %></p>
+  <% end %>
+<%= yield %>
+
+</div>
+
+</body>
+
+</main>
+
+<hr>
+<footer class="container">
+      <p>&copy; Freon 2017-2018</p>
+</footer>
+
+</html>
