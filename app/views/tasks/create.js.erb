@@ -1,0 +1,7 @@
+<% if @task.valid? %>
+  $('#new_task').remove();
+  $('#newtask-btn').show();
+  $('#task-table').append('<%= j render('item_table', task: @task) %>');
+<% else %>
+  $('.simple_form').html("<%= j render('form', task: @task) %>");
+<% end %>
