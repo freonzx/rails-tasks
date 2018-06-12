@@ -1,6 +1,9 @@
+<% if alert %>
+   <p id="notice" class='alert alert-danger'><%= alert %></p> 
+<% end %>
 
-<%= simple_form_for(@task) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :body %>
+<%= simple_form_for(@task, remote: true) do |f| %>
+  <%= f.input :title , :input_html => { class:'form_input' } %>
+  <%= f.input :done , :as => :hidden,  :input_html => {:value => false }%>
   <%= f.button :submit %>
 <% end %>
