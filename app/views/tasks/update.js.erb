@@ -1,2 +1,2 @@
-$(.task-<%= @task.id %>).remove();
+$('.task-<%= @task.id %>').remove();
 $('#task-table').append('<%= j render('item_table', task: @task) %>');

@@ -4,10 +4,12 @@
 $(function(){
   $(document).on("change", "input", function() {
     $.ajax({
-    url: `/tasks/${this.value}/`,
+    //url: `/tasks/${this.value}/`,
+    url: '/tasks/'+this.value+'/',
     type: 'PUT',
     dataType: 'script',
-    data: `task[done]=${this.checked}`,
+    // data: `task[done]=${this.checked}`,
+    data: 'task[done]='+this.checked,
     success: function(data) {
       //alert('Load was performed.');
     }
