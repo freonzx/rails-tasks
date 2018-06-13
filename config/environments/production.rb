@@ -77,7 +77,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   #Heroku
   config.assets.initialize_on_precompile = false
-  config.log_level = :debug
-  config.logger = Logger.new(STDOUT)
-  config.logger.level = Logger.const_get((ENV["LOG_LEVEL"] || "ERROR").upcase)
+  config.logger = Logger.new(STDOUT) 
+  config.log_level = :info
 end
