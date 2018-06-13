@@ -32,7 +32,7 @@
               <!--<div class="nav-link mr-5">Welcome-->
               <!--  <%= current_user.email %>-->
               <!--</div>-->
-              <%= link_to 'Welcome %s' % current_user.email , edit_user_registration_path, class: 'nav-link mr-5' %>
+              <%= link_to 'Welcome ' + current_user.email , edit_user_registration_path, class: 'nav-link mr-5' %>
             </li>
             <li>
               <% if current_user.admin? %>
