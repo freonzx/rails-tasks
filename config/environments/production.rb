@@ -78,4 +78,6 @@ Rails.application.configure do
   #Heroku
   config.assets.initialize_on_precompile = false
   config.log_level = :debug
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger.const_get((ENV["LOG_LEVEL"] || "ERROR").upcase)
 end
