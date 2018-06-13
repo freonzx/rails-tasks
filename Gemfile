@@ -25,11 +25,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Custom Gems here
 gem 'simple_form'
 gem 'devise'
-gem 'pg'
+#gem 'pg'
+gem 'sqlite3'
 gem 'glyphicons-rails'
 gem 'responders'
 gem 'pry-rails'
 gem 'rails_admin'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -56,4 +58,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-

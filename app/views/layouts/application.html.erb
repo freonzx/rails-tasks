@@ -17,12 +17,12 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link ml-4" href="/">Home
-              <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link ml-4 mt-2" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <!-- <a class="" href="">Link</a> -->
+            <%= link_to "My Tasks", tasks_url , class: "nav-link ml-4 mt-2" %>
           </li>
         </ul>
 
@@ -59,7 +59,7 @@
     </nav>
 
     <main role="main">
-      <div class="container mt-5">
+      <div class="container mt-5 mx-auto">
         <% if alert %>
           <p class="alert alert-danger mt-3"><%= alert %></p>
         <% end %>

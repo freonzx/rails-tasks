@@ -1,26 +1,33 @@
-<% @title="Home" %>
+<% @title="Tasks" %>
 
-<% if notice %>
-   <p id="notice" class='alert alert-success'><%= notice %></p> 
-<% end %>
+  <% if notice %>
+    <p id="notice" class='alert alert-success'><%= notice %></p>
+  <% end %>
 
-<h1 class='mb-3'>Listing Tasks</h1>
+  <h1 class='mb-3 mt-3'>Listing Tasks</h1>
 
-<table id="task-table" class="table table-bordered">
-  <thead>
-    <tr>
-      <th><h5>Title</h5></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tasks.each do |task| %>
-        <%= render('item_table', task: task) %>
-    <% end %>
-  </tbody>
-</table>
+  <div class="row">
+    <div class="col-md-8">
+      <table id="task-table" class="table table-condensed">
+        <thead>
+          <tr>
+            <th>
+              <h5>Title</h5>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tasks.each do |task| %>
+            <%= render('item_table', task: task) %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-<br>
+  </div>
 
-<%#= render 'form' %>
-<%= link_to 'New Task', new_task_path , remote: true, :id => "newtask-btn", class: "btn btn-outline-success" %>
+  <br>
+
+  <%#= render 'form' %>
+    <%= link_to 'New Task', new_task_path , remote: true, :id => "newtask-btn", class: "btn btn-outline-success" %>

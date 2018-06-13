@@ -15,6 +15,24 @@
  */
  @import "glyphicons";
 
+ .navbar-brand {
+   font-size: 35px;
+ }
+
+ .nav-link {
+   font-size: 18px;
+   letter-spacing: 2px;
+   color: #fff !important;
+ }
+
+ nav a:hover {
+  color: #4286f4 !important;
+}
+
+.navbar-right a:hover {
+  color: #ccc !important;
+}
+
 .login-button {
   @extend %glyphicon-log-in;
 }
