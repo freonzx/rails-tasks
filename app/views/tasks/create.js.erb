@@ -2,6 +2,7 @@
   $('#new_task').remove();
   $('#newtask-btn').show();
   $('#task-table').append('<%= j render('item_table', task: @task) %>');
+  $('.task-<%= @task.id %>').hide().fadeIn(1000);
 <% else %>
   $('.simple_form').html("<%= j render('form', task: @task) %>");
 <% end %>

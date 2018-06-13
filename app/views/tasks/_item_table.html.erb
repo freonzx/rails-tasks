@@ -2,12 +2,13 @@
   <td> 
     <h5>
       <% if task.done %>
-              <input type="checkbox" name="done" checked="true" value=<%= task.id %> > <del class='text-muted'><%= task.title %></del>
-            <% else %>
-              <input type="checkbox" name="done" value=<%= task.id %> > <%= task.title %>
-            <% end %>
+        <input type="checkbox" name="done" checked="true" value=<%= task.id %> > <del class='text-muted'><%= task.title %></del>
+        <% else %>
+          <input type="checkbox" name="done" value=<%= task.id %> > <%= task.title %>
+        <% end %>
     </h5>
-    <td>
+  </td>
+    <td class='btn-td'>
       <%#= link_to 'Show', task , class: "btn btn-outline-info" %>
       <%#= link_to 'Edit', edit_task_path(task) , class: "btn btn-outline-info" %>
       <%= link_to 'Destroy', task, method: :delete, remote: true , class: "btn btn-outline-danger" %>

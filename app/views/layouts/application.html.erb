@@ -29,14 +29,18 @@
         <ul class='nav navbar-nav navbar-right'>
           <% if user_signed_in? %>
             <li>
-              <div class="nav-link mr-5">Welcome
-                <%= current_user.email %>
-              </div>
+              <!--<div class="nav-link mr-5">Welcome-->
+              <!--  <%= current_user.email %>-->
+              <!--</div>-->
+              <%= link_to 'Welcome %s' % current_user.email , edit_user_registration_path, class: 'nav-link mr-5' %>
             </li>
             <li>
+              <% if current_user.admin? %>
+            	<%= link_to 'Admin Panel', rails_admin_path , class: 'btn btn-primary mx-2', method: :get %>
+              <% end %>
               <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary mx-2' do %>
                 <i class="logout-button"></i> Logout
-              <% end %>
+          <% end %>
             </li>
           <% else %>
             <li>

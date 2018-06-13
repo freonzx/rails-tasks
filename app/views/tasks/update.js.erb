@@ -1,2 +1,5 @@
-$('.task-<%= @task.id %>').remove();
-$('#task-table').append('<%= j render('item_table', task: @task) %>');
+$('.task-<%= @task.id %>').fadeOut(500, function() {
+  this.remove();
+});
+$('#task-table').prepend('<%= j render('item_table', task: @task) %>');
+$('.task-<%= @task.id %>').hide().fadeIn(1000);
