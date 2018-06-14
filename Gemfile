@@ -25,12 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Custom Gems here
 gem 'simple_form'
 gem 'devise'
-gem 'pg'
 gem 'glyphicons-rails'
 gem 'responders'
 gem 'pry-rails'
 gem 'rails_admin'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -52,9 +51,15 @@ group :development do
   #gem 'mysql2', '>= 0.3.13', '< 0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'sqlite3'
+  gem 'pg'
 end
 
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
+end
+
+group :freon do
+  gem 'sqlite3'
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 end
