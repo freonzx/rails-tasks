@@ -235,7 +235,7 @@ DEPENDENCIES
   glyphicons-rails
   jbuilder (~> 2.0)
   jquery-rails
-  pg
+  pg (~> 0.18)
   pry-rails
   rails (= 4.2.10)
   rails_12factor
