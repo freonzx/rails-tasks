@@ -4,6 +4,10 @@ default: &default
   pool: 5
 
 development:
+  <<: *default
+  database: task_app_development
+
+freon:
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
