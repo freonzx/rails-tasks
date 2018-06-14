@@ -25,8 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Custom Gems here
 gem 'simple_form'
 gem 'devise'
-#gem 'pg'
-gem 'sqlite3'
+gem 'pg'
 gem 'glyphicons-rails'
 gem 'responders'
 gem 'pry-rails'
@@ -53,6 +52,7 @@ group :development do
   #gem 'mysql2', '>= 0.3.13', '< 0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'sqlite3'
 end
 
 group :production do
