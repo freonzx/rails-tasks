@@ -4,10 +4,9 @@
     <p id="notice" class='alert alert-success'><%= notice %></p>
   <% end %>
 
-  <h1 class='mb-3 mt-3'>Listing Tasks</h1>
-
-  <div class="row">
-    <div class="col-md-8">
+  <div class="row pt-4">
+    <div class="col-md-8 mx-auto">
+      <h1 class='mb-3 mt-3 pb-5'>Listing Tasks</h1>
       <table id="task-table" class="table table-condensed">
         <thead>
           <tr>
@@ -23,11 +22,9 @@
           <% end %>
         </tbody>
       </table>
+      <%= link_to 'New Task', new_task_path , remote: true, :id => "newtask-btn", class: "btn btn-outline-success" %>
     </div>
 
   </div>
-
   <br>
-
-  <%#= render 'form' %>
-    <%= link_to 'New Task', new_task_path , remote: true, :id => "newtask-btn", class: "btn btn-outline-success" %>
+<%#= render 'form' %>
